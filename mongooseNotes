@@ -1,0 +1,20 @@
+## Install Mongoose
+
+npm install mongoose
+
+## Mongoose Notes
+Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js. It provides a schema-based solution to model your application data.
+https://mongoosejs.com/docs/guide.html - Mongoose documentation
+
+## Mongoose Schema
+```javascript
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const userSchema = new Schema({
+    name: { type: String, required: true },
+    age: { type: Number, required: true },
+    email: { type: String, required: true, unique: true }
+});
+const User = mongoose.model('User', userSchema);
+```
+

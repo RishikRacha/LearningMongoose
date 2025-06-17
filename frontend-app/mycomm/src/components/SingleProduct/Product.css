@@ -1,0 +1,69 @@
+.singleProductContainer {
+    background-color: #111; /* Black background */
+    color: #ccc; /* Grey text by default */
+    padding: 30px;
+    border-radius: 16px;
+    width: 60%;
+    margin: 60px auto;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.2); /* soft gold glow */
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+
+  .productImage2 {
+    height: 20vw;
+    max-width: 80%;
+  }
+  
+  .productCategory {
+    color: #d4af37; /* gold */
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .productTitle {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .productPrice {
+    color: #85e085; /* soft greenish highlight */
+    font-size: 24px;
+    margin: 15px 0;
+  }
+  
+  .productRating {
+    font-size: 20px;
+    color: #d4af37;
+    margin-bottom: 20px;
+  }
+  
+  .productDescription2 {
+    font-size: 18px;
+    color: #aaa;
+    font-style: italic;
+    margin-top: 20px;
+  }
+  
+  .addToCartBtn {
+    margin-top: 30px;
+    background-color: #d4af37; /* gold */
+    color: #111; /* black text */
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .addToCartBtn:hover {
+    background-color: #bfa232; /* darker gold */
+    transform: scale(1.05);
+  }
+  

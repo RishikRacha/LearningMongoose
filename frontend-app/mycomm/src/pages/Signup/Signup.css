@@ -1,0 +1,74 @@
+
+  
+  /* Signup container */
+  .signup-wrapper {
+    background-color: #2b2b2b;
+    color: #f2f2f2;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Heading */
+  .signup-wrapper > h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+  
+  /* Labels */
+  .signup-wrapper > label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 0.95rem;
+    color: #cccccc;
+  }
+  
+  /* Inputs */
+  .signup-wrapper > input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Button */
+  .signup-wrapper > button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .signup-wrapper > button:hover {
+    background-color: #4338ca;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .signup-wrapper {
+      padding: 30px 20px;
+    }
+  
+    .signup-wrapper > h1 {
+      font-size: 1.6rem;
+    }
+  
+    .signup-wrapper > button {
+      font-size: 0.95rem;
+    }
+  }
+  

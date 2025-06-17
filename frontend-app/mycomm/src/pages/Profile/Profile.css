@@ -1,0 +1,50 @@
+.profileContainer {
+    box-shadow: 0 0 10px gold;
+    width: 800px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 300px 500px;
+    background-color: #1a0d00;
+    margin: 50px;
+}
+
+.profileContainer > :first-child {
+    padding: 30px;
+    background-color: #1a0d00;;
+}
+
+
+#profilePic {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: 25%;
+    box-sizing:border-box;
+}
+
+.moreInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#changeUser {
+    background-color: rgba(184, 174, 81, 0.588);
+    color: rgb(42, 30, 1);
+    width: 50%;
+    align-self: center;
+}
+#changeUser:hover {
+    border-color: rgb(230, 230, 144);
+}
+#changeUser:active {
+    background-color: rgba(184, 174, 81, 0.8);
+    transform: scale(0.95);
+    box-shadow: inset 0 0 15px rgba(218, 190, 8, 0.727);
+    border: 0;
+    
+}
+.right {
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
