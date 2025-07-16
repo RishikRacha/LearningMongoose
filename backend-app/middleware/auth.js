@@ -7,7 +7,7 @@ function verifyToken(req, res, next) {
     }
     else {
         var token = req.headers["authorization"].slice(7)
-        console.log(token + ' is the token');
+        console.log(token + ' is the auth token server received');
         jwt.verify(token, secret_key, (error, data)=>{
             
             if(error) {
@@ -19,6 +19,8 @@ function verifyToken(req, res, next) {
         })
     }
 }
+
+
 
 module.exports = verifyToken;
 

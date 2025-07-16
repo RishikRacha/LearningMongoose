@@ -3,7 +3,6 @@ import './login.css'
 import { useNavigate } from 'react-router-dom'
 import { checkCredsDB } from '../../service/usersService';
 
-
 function Login({ login }) {
   const [creds, setCreds] = useState(
     {
@@ -17,6 +16,7 @@ function Login({ login }) {
     .then( (res) => {
         if(res.data.ok) {
           console.log('Valid Credentials, logged in user');
+          localStorage.setItem("token", res.data.token);
           login();
         } 
         else {

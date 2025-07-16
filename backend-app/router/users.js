@@ -3,7 +3,8 @@ const express = require('express');
 const route = express.Router();
 // const mongoose = require('mongoose');
 const User = require('../model/userSchema')     //model
-
+const jwt = require('jsonwebtoken');
+const secret_key = 'asdfghjklasdfghjklasdfghjklasdfghjklasdfghjkl';
 
 // insert new user object from req using POST
 route.post('/signup', (req, res)=>{
@@ -20,12 +21,12 @@ route.post('/signup', (req, res)=>{
     const user = new User(newUser);
     //inserts the data in mongoDB
     user.save()
-      .then((userdata)=>{
-        res.send({ok: true, result: 'User Created', data:userdata})
-      })
-      .catch((err)=>{
-        res.send({ok:false, error: err, result: 'User not created'});
-      })
+        .then((userdata)=>{
+          res.send({ok: true, result: 'User Created', data:userdata})
+        })
+        .catch((err)=>{
+          res.send({ok:false, error: err, result: 'User not created'});
+        })
 
 })
 // http://localhost:7979/api/users/signup
@@ -50,8 +51,16 @@ route.post('/signin', (req, res)=>{
     User.findOne(userCredentials)
     .then((data)=>{
         if (data) {
+            jwt.sign(req.body, secret_key, (error, token)=>{
+                if(error){
+                    res.send({ok: false, error: "failed to create token"})
+                } else {
+                    console.log(token);
+                    res.send({ok: true, result: "valid user, token generated", data: data, token: token})
+                }
+            })
             console.log(data);
-            res.send({ ok: true, result: "Valid User", data: data });
+            // res.send({ ok: true, result: "Valid User", data: data });
         }
         else {
             throw new Error("Invalid User, does not exist in database");

@@ -3,6 +3,8 @@ const express = require('express');
 const route = express.Router();
 const Product = require('../model/productSchema');
 const verifyToken = require('../middleware/auth');
+const jwt = require('jsonwebtoken');
+const secret_key = 'asdfghjklasdfghjklasdfghjklasdfghjklasdfghjkl';
 
 
 
@@ -27,7 +29,7 @@ route.get("/getProducts", (req, res)=>{
 })
 // http://localhost:7979/api/products/getProducts
 
-route.get(("/getOneProduct"), (req, res)=>{
+route.get(("/getOneProduct"), verifyToken, (req, res)=>{
     const productId = req.query.id;
 
     Product.findOne({_id: productId})

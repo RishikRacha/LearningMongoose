@@ -19,10 +19,12 @@ function ProductPage() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:7979/api/products/getOneProduct?id=${id}`)
+            .get(`http://localhost:7979/api/products/getOneProduct?id=${id}`, {headers: {Authorization:`Bearer ${localStorage.getItem("token")}`}})
             .then((response) => {
-                console.log(response.data);
-                setCurrProd(response.data.result);
+                if(response.data.ok){
+                    console.log(response.data);
+                    setCurrProd(response.data.result);
+                }
             }).catch((err) => { })
     }, [])
 
@@ -35,7 +37,7 @@ function ProductPage() {
 
     }
 
-    return (
+    if(currProd._id) return (
         <div className="singleProductContainer">
           <h2 className="productCategory">Category: {currProd.category.toUpperCase()}</h2>
           <h1 className="productTitle">{currProd.title.toUpperCase()}</h1>
@@ -46,7 +48,11 @@ function ProductPage() {
           <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart</button>
 
         </div>
-      );
+      )
+      else return (
+        <h2 className='singleProductContainer'>Error! <br/> Could not access this Product <br /> <br /> Login again to view  <br/> <button className='addToCartBtn' onClick={() => navigate("/products")}>back</button></h2>
+        
+      )
       
 }
 
